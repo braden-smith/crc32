@@ -7,26 +7,25 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.long;
+
 /**
  * This class echoes a string called from JavaScript..
  */
-public class Natnot extends CordovaPlugin {
+public class crc32 extends CordovaPlugin {
 
 	@Override
-	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-		if (action.equals("natnot")) {
-			String message = args.getString(0);
-			this.natnot(message, callbackContext);
-			return true;
+	public long execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+		if (action.equals("getLong")) {
+			JSONObject arg_object = args.getJSONObject(0);
+			String strContent = arg_object.getString("strContent");
+			this.getLong(strContent); 
+			return 1; 
 		}
-		return false;
+		return 0;
 	}
 
-	private void natnot(String message, CallbackContext callbackContext) {
-		if (message != null && message.length() > 0) {
-			callbackContext.success(message);
-		} else {
-			callbackContext.error("Expected one non-empty string argument.");
-		}
+	private long getLong(String content) {
+		return 1;
 	}
 }
