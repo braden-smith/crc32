@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+		id="com.bradensmith.crc32" version="0.0.1">
+	<name>crc32</name>
+	<description>CRC32 Checksum</description>
+	<license>Apache 2.0</license>
+	<keywords>cordova,crc32</keywords>
+	<js-module src="www/crc32.js" name="crc32">
+		<clobbers target="crc32" />
+	</js-module>
+	
+	<platform name="android">
+		<config-file target="config.xml" parent="/*">
+			<feature name="crc32">
+				<param name="android-package" value="com.bradensmith.crc32"/>
+			</feature>
+		</config-file>
+		<source-file src="src/android/crc32.java" target-dir="src/com/bradensmith/crc32" /> 
+	</platform>
+</plugin>
+
+
+
+
