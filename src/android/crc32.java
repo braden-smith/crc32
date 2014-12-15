@@ -7,7 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.long;
+import java.lang.Long;
 
 /**
  * This class echoes a string called from JavaScript..
