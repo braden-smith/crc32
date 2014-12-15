@@ -1,5 +1,6 @@
-window.crc32 = function(str, callback) {
-        cordova.exec(callback, function(err) {
-            callback('Nothing to echo.');
-        }, "crc32", "echo", [str]);
-    };
+exports.getLong = function (str) {
+        
+        var lng_crc = cordova.exec(null, null, 'crc32', 'getLong', [{"strContent":str}]);
+        return 1;
+        
+}; 
